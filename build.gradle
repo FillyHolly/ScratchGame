@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'org.scratch.GameApplication'
+        )
+    }
+}
+
+group = 'org.scratch'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // ObjectMapper
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.4.2'
+    // Gson
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
